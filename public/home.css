@@ -1,0 +1,116 @@
+.wrapper-main {
+    z-index: -100;
+    width: 90%;
+    position: absolute;
+    height: 100vh;
+    top: 110px;
+    right: 5%;
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4.2px);
+    -webkit-backdrop-filter: blur(4.2px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.slideshow {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+	border-radius: 20px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    opacity: 0;
+
+}
+
+.slide-bild {
+    width: 100%;
+}
+
+.slide-textbereich {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 70%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 0 15% 0 15%;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+}
+
+.slide-ueberschrift {
+    font-size: 2em;
+    margin: 10px 0;
+}
+
+.slide-beschreibung {
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.pfeil {
+    z-index: 100000;
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    color: rgba(255, 255, 255, 0.5);
+    user-select: none;
+    cursor: pointer;
+}
+
+.pfeil:hover {
+    z-index: 10000;
+	color: white;
+}
+
+.pfeil-links {
+	z-index: 10000;
+	left: 0;
+}
+
+.pfeil-rechts {
+    z-index: 10000;
+	right: 0;
+}
+
+.indikatorenliste {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    list-style-type: none;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+	color: azure;
+}
+
+.indikator {
+    padding: 0 10px;
+    user-select: none;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.aktiv {
+    opacity: 1;
+}

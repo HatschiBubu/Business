@@ -1,0 +1,18 @@
+{
+    "Premium": [
+        {
+            "id": 1,
+            "name": "Air Pods Cleaner Premium",
+            "price": 1499,
+            "imgName": "AirPodsReinigerT.webpm"
+        }
+    ],
+    "Standard": [
+        {
+            "id": 2,
+            "name": "Air Pods Cleaner Standard",
+            "price": 999,
+            "imgName": "AirPodsReinigerG.webpm"
+        }
+    ]
+}
