@@ -1,6 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import mainimage from '../../assets/Airpodstest.jpg';
+import mainimage from '../../assets/Airpodscleaner.jpg';
 import './main-section.styles.scss';
 
 const MainSection = ({ history }) => {
@@ -16,7 +15,7 @@ const MainSection = ({ history }) => {
                         We make products that are in the current trend from day to night.
                         Everything is produced with accuracy.
                     </p>
-                    <button className='button is-bulma' id ='shop-now' onClick={()=> history.push('/product/1')}>
+                    <button className='button is-black' id ='shop-now' onClick={()=> history.push('/product/1')}>
                         niggr
                     </button>
                 </div>
