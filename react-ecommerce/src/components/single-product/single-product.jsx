@@ -9,7 +9,7 @@ import './single-product.styles.scss';
 
 const SingleProduct = ({ match, navigate}) => {
     const { products } = useContext(ProductsContext);
-    const { addProduct, cartItems } = useContext(CartContext);
+    const { addProduct, cartItems, increase } = useContext(CartContext);
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     useEffect(() => {
@@ -52,7 +52,7 @@ const SingleProduct = ({ match, navigate}) => {
                             <button
                                 className='button is-white trendyproducts-btn'
                                 id='btn-white-outline'
-                                onClick={() => {}}>
+                                onClick={() => increase(product)}>
                                     ADD MORE
                             </button>
                         }
