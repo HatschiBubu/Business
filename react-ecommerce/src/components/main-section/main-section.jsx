@@ -1,8 +1,11 @@
 import React from 'react';
 import mainimage from '../../assets/Airpodscleaner.jpg';
+import withRouter from '../withRouter';
+import { useNavigate } from 'react-router-dom';
 import './main-section.styles.scss';
 
-const MainSection = ({ history }) => {
+const MainSection = () => {
+    const navigate = useNavigate();
     return (
         <div className='main-section-container'>
             <div className='main-section-middle'>
@@ -15,8 +18,8 @@ const MainSection = ({ history }) => {
                         We make products that are in the current trend from day to night.
                         Everything is produced with accuracy.
                     </p>
-                    <button className='button is-black' id ='shop-now' onClick={()=> history.push('/product/1')}>
-                        niggr
+                    <button className='button is-black' id ='shop-now' onClick={()=> navigate('/product/1')}>
+                        Buy now
                     </button>
                 </div>
             </div>
@@ -24,4 +27,4 @@ const MainSection = ({ history }) => {
     )
 }
 
-export default MainSection;
+export default withRouter(MainSection);
