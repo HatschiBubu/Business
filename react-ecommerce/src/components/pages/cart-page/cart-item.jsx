@@ -1,8 +1,9 @@
 import React from 'react';
 import { PlusCircleIcon, TrashIcon, MinusCircleIcon } from '../../icons';
 
-const CartItem = (product) => {
-    const { title, imageUrl, price, quantity,  } = product;
+const CartItem = (props) => {
+    const { title, imageUrl, price, quantity, id, description, increase, decrease, removeProduct } = props;
+    const product = { title, imageUrl, price, quantity, id, description }
 
     return (
         <div className='cart-item'>
@@ -18,20 +19,20 @@ const CartItem = (product) => {
             </div>
             <div className='btns-container'>
                 <button
-                className='btn-increase'>
+                className='btn-increase' onClick={() => increase(product)}>
                     <PlusCircleIcon width='20px' />
                 </button>
                 {
                     quantity === 1 &&
                     <button
-                    className='btn-trash'>
+                    className='btn-trash' onClick={() => removeProduct(product)}>
                         <TrashIcon width='20px' />
                     </button>
                 }
                 {
                     quantity > 1 &&
                     <button
-                    className='btn-decrease'>
+                    className='btn-decrease' onClick={() => decrease(product)}>
                         <MinusCircleIcon width='20px' />
                     </button>
                 }

@@ -44,20 +44,29 @@ h1, .empty-cart {
         }
     }
 
-    @media(min-width: 1024px) {
-        .cart-page {
-            display: flex;
-            justify-content: center;
+    .total-container {
+        margin: 2rem;
+        text-align: center;
+    }
+}
+
+@media(min-width: 1024px) {
+    .cart-page {
+        display: flex;
+        justify-content: center;
+
+        .total-container {
+            text-align: center;
         }
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            div {
-                margin: 1rem;
-            }
-            .name-price {
-                width: 200px;
-            }
+    }
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        div {
+            margin: 1rem;
+        }
+        .name-price {
+            width: 200px;
         }
     }
 }
