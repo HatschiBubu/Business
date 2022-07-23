@@ -6,7 +6,7 @@ import Total from './total';
 import './cart-page.styles.scss';
 
 const CartPage = () => {
-    const { cartItems, itemCount, total, increase, decrease, removeProduct } = useContext(CartContext);
+    const { cartItems, itemCount, total, increase, decrease, removeProduct, clearCart } = useContext(CartContext);
     const funcs = { increase, decrease, removeProduct }
     return (
         <Layout>
@@ -22,7 +22,7 @@ const CartPage = () => {
                                     cartItems.map(item => <CartItem { ...item } key={item.id} { ...funcs }/>)
                                 }
                             </div>
-                            <Total itemCount={itemCount} total={total} />
+                            <Total itemCount={itemCount} total={total} clearCart={clearCart}/>
                         </div>
                     </>
                 }

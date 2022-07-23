@@ -2,7 +2,7 @@ import React from "react";
 import withRouter from "../../withRouter";
 import { useNavigate } from "react-router-dom";
 
-const Total = ({ itemCount, total }) => {
+const Total = ({ itemCount, total, clearCart }) => {
     const navigate = useNavigate();
     return (
         <div className='total-container'>
@@ -14,7 +14,7 @@ const Total = ({ itemCount, total }) => {
                 <button
                     className='button is-black'
                     onClick={() => navigate('/checkout')}>CHECKOUT</button>
-                <button className='button is-white' onClick={() => {}}>CLEAR</button>
+                <button className='button is-white' onClick={() => clearCart()}>CLEAR</button>
             </div>
         </div>
     );
