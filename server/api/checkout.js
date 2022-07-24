@@ -12,13 +12,36 @@ async function createCheckoutSession(req, res) {
 
     try {
         session = await stripeAPI.checkout.sessions.create({
-            payment_method_types: ['card'],
+            payment_method_types: ['card', 'bancontact', 'eps', 'giropay', 'ideal', 'p24', 'sepa_debit', 'sofort'],
             mode: 'payment',
             line_items,
             customer_email,
             success_url: `${domainUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: `${domainUrl}/canceled`,
-            shipping_address_collection: { allowed_countries: ['GB', 'US', 'CH'] }
+            shipping_address_collection: { allowed_countries: ['GB', 'US', 'CH', 'DE'] },
+            shipping_options: [
+                {
+                  shipping_rate_data: {
+                    type: 'fixed_amount',
+                    fixed_amount: {
+                      amount: 300,
+                      currency: 'eur',
+                    },
+                    display_name: 'Shipping with official post',
+                    // Delivers between 5-7 business days
+                    delivery_estimate: {
+                      minimum: {
+                        unit: 'business_day',
+                        value: 2,
+                      },
+                      maximum: {
+                        unit: 'business_day',
+                        value: 7,
+                      },
+                    }
+                  }
+                }
+            ]
         });
         res.status(200).json({ sessionId: session.id, });
     } catch (error) {
