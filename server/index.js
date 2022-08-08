@@ -23,7 +23,7 @@ const corsOptions ={
 
 app.use(cors(corsOptions)) // Use this after the variable declaration
 
-app.get('/', (req, res) => res.send('Hello World'));
+app.get('/', (req, res) => res.send('Hello World!'));
 
 app.post('/create-checkout-session', createCheckoutSession);
 
