@@ -12,6 +12,10 @@ export async function fetchFromAPI(endpoint, opts) {
         ...(body && { body: JSON.stringify(body) }),
         headers: {
             'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin' : 'https://ddrtestswiss.tech',
+            'Access-Control-Allow-Credentials' : 'true',
+            'Access-Control-Allow-Methods' : 'GET, POST, OPTIONS',
+            'Access-Control-Allow-Headers' : 'Origin, Content-Type, Accept',
         },
     });
 
