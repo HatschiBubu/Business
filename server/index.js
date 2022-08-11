@@ -34,7 +34,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get('/', (req, res) => res.send('warum tuet me mir das ah'));
+app.get('/', (req, res) => res.send('warum tuet me mir das ah1'));
 
 app.post('/create-checkout-session', createCheckoutSession);
 
