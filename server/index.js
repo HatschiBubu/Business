@@ -34,7 +34,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get('/', (req, res) => res.send('Hello World!!!'));
+app.get('/', (req, res) => res.send('warum tuet me mir das ah'));
 
 app.post('/create-checkout-session', createCheckoutSession);
 
