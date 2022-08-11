@@ -18,7 +18,7 @@ app.use(express.json({
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://ddrtestswiss.tech');
+    res.setHeader('Access-Control-Allow-Origin', 'https://ddrtestswiss.tech/checkout');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -34,7 +34,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get('/', (req, res) => res.send('warum tuet me mir das ah1'));
+app.get('/', (req, res) => res.send('warum tuet me mir das ah2'));
 
 app.post('/create-checkout-session', createCheckoutSession);
 
