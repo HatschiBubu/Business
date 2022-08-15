@@ -15,24 +15,16 @@ app.use(express.json({
     verify: (req, res, buffer) => req['rawBody'] = buffer,
 }));
 
-app.use(function (req, res, next) {
+app.options('/', cors()) // enable pre-flight request for DELETE request
+app.options('/create-checkout-session', cors())
 
-    // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', '*');
+app.delete('/', cors(), function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+})
 
-    // Request methods you wish to allow
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-
-    // Request headers you wish to allow
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-
-    // Set to true if you need the website to include cookies in the requests sent
-    // to the API (e.g. in case you use sessions)
-    res.setHeader('Access-Control-Allow-Credentials', true);
-
-    // Pass to next layer of middleware
-    next();
-});
+app.delete('/create-checkout-session', cors(), function (req, res, next) {
+    res.json({msg: 'This is CORS-enabled for all origins!'})
+  })
 
 app.get('/', (req, res) => res.send('warum tuet me mir das ah2'));
 
