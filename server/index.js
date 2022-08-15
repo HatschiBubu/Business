@@ -26,7 +26,7 @@ app.delete('/create-checkout-session', cors(), function (req, res, next) {
     res.json({msg: 'This is CORS-enabled for all origins!'})
   })
 
-app.get('/', (req, res) => res.send('warum tuet me mir das ah2'));
+app.get('/', (req, res) => res.send('warum tuet me mir das ah3'));
 
 app.post('/create-checkout-session', createCheckoutSession);
 
